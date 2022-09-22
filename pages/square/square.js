@@ -3,12 +3,49 @@ Page({
 
   data: {
     tabs: ["全部服务", "在提供", "正在找"],
-    currentTabIndex: 0
+    currentTabIndex: 0,
+    currentCategoryId: 0,
+    categoryList: [{
+        "id": 1,
+        "name": "保洁"
+      },
+      {
+        "id": 2,
+        "name": "汽修"
+      },
+      {
+        "id": 3,
+        "name": "疏通"
+      },
+      {
+        "id": 4,
+        "name": "在线教育"
+      },
+      {
+        "id": 5,
+        "name": "宠物"
+      },
+      {
+        "id": 6,
+        "name": "护理"
+      },
+      {
+        "id": 7,
+        "name": "婚恋"
+      }
+    ]
   },
   handleTabChange(event) {
-    const currentTabIndex = event.currentTarget.dataset.index
+    const tabIndex = event.currentTarget.dataset.index
     this.setData({
-      currentTabIndex: currentTabIndex
+      currentTabIndex: tabIndex
+    })
+  },
+
+  handleCategoryChange(event) {
+    const categoryId = event.currentTarget.dataset.id
+    this.setData({
+      currentCategoryId: categoryId
     })
   }
 
