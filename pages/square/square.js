@@ -3,8 +3,6 @@ Page({
 
   data: {
     tabs: ["全部服务", "在提供", "正在找"],
-    currentTabIndex: 0,
-    currentCategoryId: 0,
     categoryList: [{
         "id": 1,
         "name": "保洁"
@@ -35,18 +33,13 @@ Page({
       }
     ]
   },
-  handleTabChange(event) {
-    const tabIndex = event.currentTarget.dataset.index
-    this.setData({
-      currentTabIndex: tabIndex
-    })
+
+  getTabCurrentIndex(e) {
+    console.log(e.detail);
   },
 
-  handleCategoryChange(event) {
-    const categoryId = event.currentTarget.dataset.id
-    this.setData({
-      currentCategoryId: categoryId
-    })
-  }
+  getCategoryCurrentId(e) {
+    console.log(e.detail);
+  },
 
 })

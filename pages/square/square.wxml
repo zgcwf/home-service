@@ -1,19 +1,5 @@
 <view class="square-container">
-  <view class="tabs">
-    <view class="tab-item" wx:for="{{tabs}}" wx:key="index" bindtap="handleTabChange" data-index="{{index}}">
-      <view class="tab-item-label {{currentTabIndex === index ? 'active-tab' : ''}}">{{item}}</view>
-      <view class="tab-item-divider" wx:if="{{currentTabIndex === index}}"></view>
-    </view>
-  </view>
-  <view class="category-slider">
-    <swiper class="category-swiper" display-multiple-items="2" next-margin="60rpx" circular="{{true}}">
-      <!-- wk:key="字符串"，代表在item中的某个属性 -->
-      <swiper-item wx:for="{{categoryList}}" wx:key="id" bindtap="handleCategoryChange" data-id="{{item.id}}">
-        <view class="category-swiper-item {{ currentCategoryId === item.id ? 'active-category': '' }}">
-          <text class="swiper-item-name">{{item.name}}</text>
-        </view>
-      </swiper-item>
-    </swiper>
-  </view>
+  <i-tabs tabs="{{tabs}}" bind:change="getTabCurrentIndex"></i-tabs>
+  <i-carousel carouselList="{{categoryList}}" bind:change="getCategoryCurrentId"></i-carousel>
   <view class="tab-panel">3</view>
 </view>
