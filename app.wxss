@@ -1,9 +1,14 @@
 /** 定义在 app.wxss 中的样式为全局样式，作用于每一个页面 **/
 text,
 view,
-image {
+image,
+swiper-item {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-size: 32rpx;
+}
+
+page {
+  height: 100%;
 }

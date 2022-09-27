@@ -1,5 +1,5 @@
 /* components/carousel/carousel.wxss */
-.container {
+.carousel-container {
   padding: 30rpx 0 30rpx 30rpx;
 }
 

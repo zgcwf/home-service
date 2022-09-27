@@ -1,5 +1,10 @@
 <view class="square-container">
-  <i-tabs tabs="{{tabs}}" bind:change="getTabCurrentIndex"></i-tabs>
-  <i-carousel carouselList="{{categoryList}}" bind:change="getCategoryCurrentId"></i-carousel>
-  <view class="tab-panel">3</view>
+  <i-tabs tabs="{{tabs}}" bind:onchange="handleTabChange">
+    <view slot="extend">
+      <i-carousel carouselList="{{categoryList}}" bind:onchange="handleCategoryChange" />
+    </view>
+    <view slot="content">
+      <i-tab-panel></i-tab-panel>
+    </view>
+  </i-tabs>
 </view>

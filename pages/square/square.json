@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "i-tabs": "../../components/tabs/tabs",
-    "i-carousel": "../../components/carousel/carousel"
+    "i-carousel": "../../components/carousel/carousel",
+    "i-tab-panel": "../../components/tab-panel/tab-panel"
   }
 }

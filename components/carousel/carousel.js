@@ -27,7 +27,7 @@ Component({
         currentCarouselId: carouselId
       })
 
-      this.triggerEvent("change", carouselId)
+      this.triggerEvent("onchange", carouselId)
     },
   }
 })

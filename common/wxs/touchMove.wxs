@@ -1,0 +1,58 @@
+// 限制：1.只能使用ES5语法，不支持ES6 2.不能够调用小程序提供的Api
+
+var touchStartX, touchEndX, touchStartY, touchEndY
+
+function handleTouchStart(e) {
+  touchStartX = e.changedTouches[0].clientX
+  touchStartY = e.changedTouches[0].clientY
+}
+
+function handleTouchEnd(e, ownerInstance) {
+  touchEndX = e.changedTouches[0].clientX
+  touchEndY = e.changedTouches[0].clientY
+
+  var distanceX = getSlideDistanceX(touchStartX, touchEndX)
+  var distanceY = getSlideDistanceY(touchStartY, touchEndY)
+
+  if (disableSlideSwitch(distanceY)) return
+
+  var direction = getLevelSlideDirection(distanceX)
+  if (direction !== 0) {
+    //  ownerInstance 表示的是触发事件的组件所在的组件的实例，如果触发事件的组件是在页面内的,则表示页面实例
+    ownerInstance.callMethod('handleTouchMove', direction)
+  }
+}
+
+function getSlideDistanceX(touchStartX, touchEndX) {
+  return touchEndX - touchStartX
+}
+
+function getSlideDistanceY(touchStartY, touchEndY) {
+  return touchEndY - touchStartY
+}
+
+function disableSlideSwitch(distance) {
+  if (distance > 50 || distance < -50) return true
+
+  return false
+}
+
+function getLevelSlideDirection(distance) {
+  // 状态：-1：后退（右滑），0：不动，1：前进（左滑）
+  var result = 0
+
+  if (distance < 0 && distance < 70) {
+    result = 1
+  }
+
+  if (distance > 0 && distance > 70) {
+    result = -1
+  }
+
+  return result
+}
+
+module.exports = {
+  handleTouchStart: handleTouchStart,
+  handleTouchEnd: handleTouchEnd
+}

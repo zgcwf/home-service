@@ -1,4 +1,10 @@
 /* components/tabs/tabs.wxss */
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .tabs {
   display: flex;
   align-items: center;
@@ -28,4 +34,9 @@
   width: 30rpx;
   height: 6rpx;
   background-color: #F3D066;
+}
+
+.tab-content {
+  flex: 1;
+  margin-top: 30px;
 }

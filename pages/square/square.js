@@ -34,11 +34,11 @@ Page({
     ]
   },
 
-  getTabCurrentIndex(e) {
+  handleTabChange(e) {
     console.log(e.detail);
   },
 
-  getCategoryCurrentId(e) {
+  handleCategoryChange(e) {
     console.log(e.detail);
   },
 

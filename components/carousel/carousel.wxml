@@ -1,5 +1,5 @@
 <!--components/carousel/carousel.wxml-->
-<view class="container">
+<view class="carousel-container">
   <swiper class="carousel" display-multiple-items="2" next-margin="60rpx" circular="{{true}}">
     <!-- wk:key="字符串"，代表在item中的某个属性 -->
     <swiper-item wx:for="{{carouselList}}" wx:key="id" bindtap="handleCarouselChange" data-id="{{item.id}}">
