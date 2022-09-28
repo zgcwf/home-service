@@ -18,7 +18,11 @@ function handleTouchEnd(e, ownerInstance) {
 
   var direction = getLevelSlideDirection(distanceX)
   if (direction !== 0) {
-    //  ownerInstance 表示的是触发事件的组件所在的组件的实例，如果触发事件的组件是在页面内的,则表示页面实例
+    /**   
+     ownerInstance 表示的是触发事件的组件所在的组件的实例，如果触发事件的组件是在页面内的,则表示页面实例，
+    1.使用ownerInstance.callMethod(‘函数名’,‘参数’)来调用页面/组件的函数，并给这个方法传递参数;WXS 所在的组件或者页面，必须已经存在要调用的函数。
+    2.使用ownerInstance.triggerEvent(‘事件名称’, ‘参数’)来触发一个自定义事件;想要监听到这个事件，必须是在使用了这个WXS的自定义组件外部，即父组件或者页面，才能监听到。
+     */
     ownerInstance.callMethod('handleTouchMove', direction)
   }
 }
@@ -41,11 +45,11 @@ function getLevelSlideDirection(distance) {
   // 状态：-1：后退（右滑），0：不动，1：前进（左滑）
   var result = 0
 
-  if (distance < 0 && distance < 70) {
+  if (distance < -70) {
     result = 1
   }
 
-  if (distance > 0 && distance > 70) {
+  if (distance > 70) {
     result = -1
   }
 

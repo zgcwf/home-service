@@ -37,7 +37,7 @@ Component({
       const direction = value
       const currentTabIndex = this.data.currentTabIndex
       const targetTabIndex = currentTabIndex + direction
-
+      
       if (this.disableTouchSlide(targetTabIndex)) return
 
       // 自定义数据Event，使其能够满足handleTabChange函数的参数结构
