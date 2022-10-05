@@ -1,4 +1,5 @@
-// pages/square/square.js
+import service from "../../model/service.js"
+
 Page({
 
   data: {
@@ -32,6 +33,15 @@ Page({
         "name": "婚恋"
       }
     ]
+  },
+
+  onLoad(options) {
+    this.handleGetServiceList()
+  },
+
+  async handleGetServiceList() {
+    const res = await service.getServiceList(1, 10)
+    console.log(res);
   },
 
   handleTabChange(e) {
