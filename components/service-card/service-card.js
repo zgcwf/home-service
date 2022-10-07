@@ -1,10 +1,12 @@
-// components/tab-panel/tab-panel.js
+// components/service-card/service-card.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    service: {
+      type: Object
+    }
   },
 
   /**
@@ -18,6 +20,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-   
+
   }
 })

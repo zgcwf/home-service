@@ -16,8 +16,7 @@
     "selectedColor": "#FBC02D",
     "color": "#8A8A8A",
     "backgroundColor": "#FFFFFF",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/square/square",
         "text": "广场",
         "selectedIconPath": "images/tab-bar/square-selected.png",
@@ -42,6 +41,12 @@
         "iconPath": "images/tab-bar/mine.png"
       }
     ]
+  },
+  "usingComponents": {
+    "i-tabs": "./components/tabs/tabs",
+    "i-carousel": "./components/carousel/carousel",
+    "i-service-card": "./components/service-card/service-card",
+    "i-icon": "./components/icon/icon"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

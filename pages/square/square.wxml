@@ -4,7 +4,9 @@
       <i-carousel carouselList="{{categoryList}}" bind:onchange="handleCategoryChange" />
     </view>
     <view slot="content">
-      <i-tab-panel></i-tab-panel>
+      <view class="service-card" wx:for="{{serviceList}}" wx:key="id" >
+        <i-service-card service="{{item}}"></i-service-card>
+      </view>
     </view>
   </i-tabs>
 </view>

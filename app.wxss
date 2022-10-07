@@ -6,7 +6,6 @@ swiper-item {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-size: 32rpx;
 }
 
 page {

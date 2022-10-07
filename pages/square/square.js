@@ -4,7 +4,8 @@ Page({
 
   data: {
     tabs: ["全部服务", "在提供", "正在找"],
-    categoryList: []
+    categoryList: [],
+    serviceList: []
   },
 
   onLoad(options) {
@@ -13,8 +14,11 @@ Page({
   },
 
   async handleServiceList() {
-    const res = await Service.getServiceList(1, 10)
+    const res = await Service.getServiceList(1, 6)
     console.log(res);
+    this.setData({
+      serviceList: res.data
+    })
   },
 
   async handleCategoryList() {
