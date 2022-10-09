@@ -133,3 +133,54 @@ block wx:if，因为 wx:if 是一个控制属性，需要将它添加到一个�
   <view> view2 </view>
 </block>
 ```
+
+## 类
+
+### 1. 实例方法与静态方法
+
+区别：
+
+1. 调用实例方法需要 new 实例化，调用静态方法可以直接调用
+2. 在静态方法中是不能获取实例属性的状态（属性）的，但可以访问静态属性
+3. 调用静态方法本质上就是调用类方法
+4. 实例化调用，本质上是在调用对象的方法
+5. 每new(实例化)一次就是一个新的对象,每个对象的内部属性互不影响
+6. 所以类中定义的方法如果需要用到类中定义的状态(属性),那么定义为实例方法,如果用不到类中定义的属性,则定义为静态方法
+
+```js
+class Service  {
+  page = 1
+  count = 4
+
+  static sum = 5
+
+// 实例方法
+    async getServiceList() {
+    //  可以拿到实例属性
+     this.page
+     this.count
+    }
+
+// 静态方法 static
+    static getServiceById() {
+      // 拿不到 page count 等实例属性,但可以拿到静态属性
+      // 但最好不要这么做,因为你修改的是类的属性,这样每个页面用到该属性的地方都会被同步修改
+      // 但实例对象在每个页面使用之前new一下都是一个新的对象,属性互不影响
+      Service.sum = 2
+    }
+}
+
+// 实例方法使用过程：
+
+export default Service
+
+const service = new Service()
+service.getServiceList()
+
+// 静态方法使用过程
+export default Service
+
+Service.getServiceById()
+
+```
+

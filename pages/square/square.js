@@ -1,5 +1,8 @@
 import Service from "../../model/service.js"
 import Category from "../../model/category.js"
+
+const service = new Service()
+
 Page({
 
   data: {
@@ -13,11 +16,25 @@ Page({
     this.handleCategoryList()
   },
 
-  async handleServiceList() {
-    const res = await Service.getServiceList(1, 6)
-    console.log(res);
+  // 页面下拉刷新的处理函数
+  async onPullDownRefresh() {
+    const serviceList = await service.reset().getServiceList()
     this.setData({
-      serviceList: res.data
+      serviceList
+    })
+    // 停止下拉刷新
+    wx.stopPullDownRefresh()
+  },
+
+  // 页面上拉触底事件的处理函数
+  onReachBottom() {
+    this.handleServiceList()
+  },
+
+  async handleServiceList() {
+    const serviceList = await service.getServiceList()
+    this.setData({
+      serviceList
     })
   },
 
