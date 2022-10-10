@@ -23,6 +23,8 @@ Component({
   methods: {
     handleCarouselChange(e) {
       const carouselId = e.currentTarget.dataset.id
+      if (carouselId === this.data.currentCarouselId) return
+      
       this.setData({
         currentCarouselId: carouselId
       })
