@@ -1,4 +1,7 @@
 // components/tabs/tabs.js
+import {
+  throttle
+} from '../../utils/utils'
 Component({
   /**
    * 组件的属性列表
@@ -21,9 +24,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleTabChange(e) {
+    handleTabChange: throttle(function (e) {
       const tabIndex = e.currentTarget.dataset.index
-
       if (tabIndex === this.data.currentTabIndex) return
 
       this.setData({
@@ -31,13 +33,13 @@ Component({
       })
 
       this.triggerEvent('onchange', tabIndex)
-    },
+    }),
 
     handleTouchMove(value) {
       const direction = value
       const currentTabIndex = this.data.currentTabIndex
       const targetTabIndex = currentTabIndex + direction
-      
+
       if (this.disableTouchSlide(targetTabIndex)) return
 
       // 自定义数据Event，使其能够满足handleTabChange函数的参数结构
