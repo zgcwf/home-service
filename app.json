@@ -8,8 +8,9 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "慕慕到家",
+    "navigationBarTextStyle": "black",
+    "backgroundColorBottom": "#efefef"
   },
   "tabBar": {
     "borderStyle": "white",
