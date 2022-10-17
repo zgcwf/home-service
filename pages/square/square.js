@@ -10,12 +10,16 @@ Page({
     categoryList: [],
     serviceList: [],
     tabIndex: "",
-    categoryId: ""
+    categoryId: "",
+    loading: true
   },
 
-  onLoad(options) {
-    this.handleServiceList()
-    this.handleCategoryList()
+  async onLoad(options) {
+    await this.handleServiceList()
+    await this.handleCategoryList()
+    this.setData({
+      loading: false
+    })
   },
 
   // 页面下拉刷新的处理函数

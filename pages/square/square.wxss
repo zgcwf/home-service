@@ -1,4 +1,6 @@
 /* 在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器 */
+@import "./square.skeleton.wxss";
+
 .square-container {
   height: 100%;
   background-color: #f5f5f5;

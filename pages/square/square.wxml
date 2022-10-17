@@ -1,3 +1,6 @@
+<import src="square.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+
 <view class="square-container">
   <i-tabs tabs="{{tabs}}" bind:onchange="handleTabChange">
     <view slot="extend">

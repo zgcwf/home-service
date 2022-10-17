@@ -1,0 +1,220 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/10/17 下午2:21:05
+使用方法：
+在 C:\Users\zgc99\Desktop\home-service\pages\square\square.wxml 引入模板
+
+```
+<import src="square.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 C:\Users\zgc99\Desktop\home-service\pages\square\square.wxss 中引入样式
+```
+@import "./square.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="square-container">
+      <view is="components/tabs/tabs">
+        <view class="tabs--tabs-container">
+          <view class="tabs--tabs">
+            <view class="tabs--tab-item" data-index="0">
+              <view class="tabs--tab-item-label tabs--active-tab sk-transparent sk-text-30-0000-279 sk-text">全部服务</view>
+              <view class="tabs--tab-item-divider"></view>
+            </view>
+            <view class="tabs--tab-item" data-index="1">
+              <view class="tabs--tab-item-label sk-transparent sk-text-30-0000-270 sk-text">在提供</view>
+            </view>
+            <view class="tabs--tab-item" data-index="2">
+              <view class="tabs--tab-item-label sk-transparent sk-text-30-0000-855 sk-text">正在找</view>
+            </view>
+          </view>
+          <view>
+            <view is="components/carousel/carousel">
+              <view class="carousel--carousel-container">
+                <swiper circular="true" class="carousel--carousel" display-multiple-items="2" next-margin="60rpx" current="0" autoplay="false">
+                  <swiper-item data-id="0" style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+                    <view class="carousel--carousel-item carousel--active-carousel-item sk-image">
+                      <text class="carousel--carousel-item-name sk-transparent sk-text-14-2857-872 sk-text">全部</text>
+                    </view>
+                  </swiper-item>
+                  <swiper-item data-id="8" style="position: absolute; width: 100%; height: 100%; transform: translate(-300%, 0px) translateZ(0px);">
+                    <view class="carousel--carousel-item sk-image">
+                      <text class="carousel--carousel-item-name sk-transparent sk-text-14-2857-691 sk-text">装修</text>
+                    </view>
+                  </swiper-item>
+                  <swiper-item data-id="9" style="position: absolute; width: 100%; height: 100%; transform: translate(-200%, 0px) translateZ(0px);">
+                    <view class="carousel--carousel-item sk-image">
+                      <text class="carousel--carousel-item-name sk-transparent sk-text-14-2857-619 sk-text">家电维修</text>
+                    </view>
+                  </swiper-item>
+                  <swiper-item data-id="10" style="position: absolute; width: 100%; height: 100%; transform: translate(-100%, 0px) translateZ(0px);">
+                    <view class="carousel--carousel-item sk-image">
+                      <text class="carousel--carousel-item-name sk-transparent sk-text-14-2857-484 sk-text">搬运</text>
+                    </view>
+                  </swiper-item>
+                </swiper>
+              </view>
+            </view>
+          </view>
+          <view class="tabs--tab-content">
+            <view>
+              <view class="service-card">
+                <view is="components/service-card/service-card">
+                  <view class="card--service-container">
+                    <view class="card--left">
+                      <view class="card--type-tag sk-transparent sk-text-14-2857-826 sk-text">
+                        在提供
+                      </view>
+                      <image class="card--cover-image sk-image" mode="aspectFill"></image>
+                    </view>
+                    <view class="card--right">
+                      <view class="card--row">
+                        <view class="card--service-title sk-transparent sk-text-14-2857-659 sk-text">
+                          电脑维修服务
+                        </view>
+                        <view class="card--category">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size: 16px;color:#f27013;"></view>
+                          </view>
+                          <view class="card--category-text sk-transparent sk-text-14-2857-795 sk-text">
+                            家电维修
+                          </view>
+                        </view>
+                      </view>
+                      <view class="card--row">
+                        <view class="card--publisher">
+                          <view class="card--publisher-avatar">
+                            <image class="card--publisher-avatar-image sk-image"></image>
+                          </view>
+                          <view class="card--publisher-nickname sk-transparent sk-text-14-2857-840 sk-text">
+                            赵云龙
+                          </view>
+                        </view>
+                        <view class="card--score sk-transparent sk-text-14-2857-942 sk-text">★ 0</view>
+                      </view>
+                      <view class="card--row">
+                        <view class="card--create-time sk-transparent sk-text-14-2857-145 sk-text">
+                          2022-09-16 21:23:26
+                        </view>
+                      </view>
+                      <view class="card--row card--row-last">
+                        <view class="card--price sk-transparent">
+                          <text class="card--label sk-transparent sk-opacity">￥</text>50.00
+                        </view>
+                        <view class="card--sales sk-transparent sk-text-14-2857-632 sk-text">
+                          已售 0
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="service-card">
+                <view is="components/service-card/service-card">
+                  <view class="card--service-container">
+                    <view class="card--left">
+                      <view class="card--type-tag sk-transparent sk-text-14-2857-525 sk-text">
+                        正在找
+                      </view>
+                      <image class="card--cover-image sk-image" mode="aspectFill"></image>
+                    </view>
+                    <view class="card--right">
+                      <view class="card--row">
+                        <view class="card--service-title sk-transparent sk-text-14-2857-768 sk-text">
+                          维护保养摩托车
+                        </view>
+                        <view class="card--category">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size: 16px;color:#f27013;"></view>
+                          </view>
+                          <view class="card--category-text sk-transparent sk-text-14-2857-877 sk-text">
+                            汽修
+                          </view>
+                        </view>
+                      </view>
+                      <view class="card--row">
+                        <view class="card--publisher">
+                          <view class="card--publisher-avatar">
+                            <image class="card--publisher-avatar-image sk-image"></image>
+                          </view>
+                          <view class="card--publisher-nickname sk-transparent sk-text-14-2857-963 sk-text">
+                            Mr.Li
+                          </view>
+                        </view>
+                      </view>
+                      <view class="card--row">
+                        <view class="card--create-time sk-transparent sk-text-14-2857-399 sk-text">
+                          2022-09-09 22:46:29
+                        </view>
+                      </view>
+                      <view class="card--row card--row-last">
+                        <view class="card--price sk-transparent">
+                          <text class="card--label sk-transparent sk-opacity">￥</text>500.00
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="service-card">
+                <view is="components/service-card/service-card">
+                  <view class="card--service-container">
+                    <view class="card--left">
+                      <view class="card--type-tag sk-transparent sk-text-14-2857-637 sk-text">
+                        在提供
+                      </view>
+                      <image class="card--cover-image sk-image" mode="aspectFill"></image>
+                    </view>
+                    <view class="card--right">
+                      <view class="card--row">
+                        <view class="card--service-title sk-transparent sk-text-14-2857-798 sk-text">
+                          MacBook 日常维护保养
+                        </view>
+                        <view class="card--category">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size: 16px;color:#f27013;"></view>
+                          </view>
+                          <view class="card--category-text sk-transparent sk-text-14-2857-806 sk-text">
+                            家电维修
+                          </view>
+                        </view>
+                      </view>
+                      <view class="card--row">
+                        <view class="card--publisher">
+                          <view class="card--publisher-avatar">
+                            <image class="card--publisher-avatar-image sk-image"></image>
+                          </view>
+                          <view class="card--publisher-nickname sk-transparent sk-text-14-2857-593 sk-text">
+                            Mr.Li
+                          </view>
+                        </view>
+                        <view class="card--score sk-transparent sk-text-14-2857-860 sk-text">★ 0</view>
+                      </view>
+                      <view class="card--row">
+                        <view class="card--create-time sk-transparent sk-text-14-2857-424 sk-text">
+                          2022-09-09 22:43:00
+                        </view>
+                      </view>
+                      <view class="card--row card--row-last">
+                        <view class="card--price sk-transparent">
+                          <text class="card--label sk-transparent sk-opacity">￥</text>200.00
+                        </view>
+                        <view class="card--sales sk-transparent sk-text-14-2857-993 sk-text">
+                          已售 0
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
