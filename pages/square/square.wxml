@@ -1,4 +1,4 @@
-<import src="square.skeleton.wxml"/>
+<import src="square.skeleton.wxml" />
 <template is="skeleton" wx:if="{{loading}}" />
 
 <view class="square-container">
@@ -7,9 +7,10 @@
       <i-carousel carouselList="{{categoryList}}" bind:onchange="handleCategoryChange" />
     </view>
     <view slot="content">
-      <view class="service-card" wx:for="{{serviceList}}" wx:key="id" >
+      <view class="service-card" wx:for="{{serviceList}}" wx:key="id">
         <i-service-card service="{{item}}"></i-service-card>
       </view>
+      <i-empty-content show="{{serviceList.length < 1}}" content="暂时还没有任何服务" top="220" />
     </view>
   </i-tabs>
 </view>

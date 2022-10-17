@@ -46,7 +46,8 @@
     "i-tabs": "./components/tabs/tabs",
     "i-carousel": "./components/carousel/carousel",
     "i-service-card": "./components/service-card/service-card",
-    "i-icon": "./components/icon/icon"
+    "i-icon": "./components/icon/icon",
+    "i-empty-content": "./components/empty-content/empty-content"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
