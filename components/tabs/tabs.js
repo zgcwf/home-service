@@ -54,8 +54,7 @@ Component({
     },
 
     disableTouchSlide(targetTabIndex) {
-      const disabled = targetTabIndex < 0 || targetTabIndex > this.properties.tabs.length - 1
-      return disabled ? true : false
+      return targetTabIndex < 0 || targetTabIndex > this.properties.tabs.length - 1
     }
   },
 

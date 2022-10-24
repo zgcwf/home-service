@@ -66,4 +66,15 @@ Page({
     this.handleServiceList()
   },
 
+  handleSelectedService(e) {
+    const serviceId = e.currentTarget.dataset.service.id
+    this.goToServiceDetailPage(serviceId)
+  },
+
+  goToServiceDetailPage(id) {
+    wx.navigateTo({
+      url: `/pages/service-detail/service-detail?id=${id}`,
+    })
+  }
+
 })

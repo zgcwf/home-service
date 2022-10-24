@@ -3,7 +3,8 @@
     "pages/square/square",
     "pages/publish/publish",
     "pages/message/message",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/service-detail/service-detail"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -48,7 +49,8 @@
     "i-carousel": "./components/carousel/carousel",
     "i-service-card": "./components/service-card/service-card",
     "i-icon": "./components/icon/icon",
-    "i-empty-content": "./components/empty-content/empty-content"
+    "i-empty-content": "./components/empty-content/empty-content",
+    "i-avatar": "./components/avatar/avatar"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

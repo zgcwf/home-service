@@ -40,6 +40,12 @@ class Service {
     this.hasMoreData = true
     return this
   }
+
+  static getServiceDetail(id) {
+    return Http.request({
+      url: `v1/service/${id}`
+    })
+  }
 }
 
 export default Service
