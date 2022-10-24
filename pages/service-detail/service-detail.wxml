@@ -1,4 +1,5 @@
 <!--pages/service-detail/service-detail.wxml-->
+<wxs src="/common/wxs/statusMap.wxs" module="statusMap"></wxs>
 <view class="service-detail">
   <view class="service-info">
     <image class="cover-image" mode="widthFix" src="{{service.cover_image.path}}"></image>
@@ -30,5 +31,9 @@
     <view class="row">
       <view>{{service.description}}</view>
     </view>
+  </view>
+  <view wx:if="{{isPublisher}}" class="service-status">
+    <view>服务状态</view>
+    <view>{{statusMap.service(service.status)}}</view>
   </view>
 </view>

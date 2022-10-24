@@ -1,73 +1,38 @@
 // pages/service-detail/service-detail.js
 import Service from "../../model/service.js"
+import User from "../../model/user.js"
+
 Page({
 
   data: {
     service: null,
-    serviceId: ''
+    serviceId: '',
+    isPublisher: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  async onLoad(options) {
     this.data.serviceId = Number(options?.id)
-    this.handleGetServiceDetail()
+    await this.handleGetServiceDetail()
+    this.checkRole()
   },
 
- async handleGetServiceDetail() {
-   const service = await Service.getServiceDetail(this.data.serviceId)
-   this.setData({
-     service
-   })
+  async handleGetServiceDetail() {
+    const service = await Service.getServiceDetail(this.data.serviceId)
+    this.setData({
+      service
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  checkRole() {
+    const userInfo = User.getUserInfoByLocal();
+    if (userInfo && userInfo.id === this.data.service.publisher.id) {
+      this.setData({
+        isPublisher: true
+      })
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })
