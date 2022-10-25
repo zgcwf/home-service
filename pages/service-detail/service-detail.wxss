@@ -1,6 +1,5 @@
 .service-detail {
   font-size: 28rpx;
-  box-sizing: border-box;
   background-color: #efefef;
   width: 100%;
   height: 100vh;
@@ -62,7 +61,6 @@
   background-color: #fff;
   width: 100%;
   padding: 30rpx 30rpx;
-  box-sizing: border-box;
   margin-top: 30rpx;
 }
 
@@ -100,7 +98,6 @@
   background-color: #fff;
   width: 100%;
   padding: 30rpx 30rpx;
-  box-sizing: border-box;
   border-top: 1px solid #efefef;
   position: fixed;
   bottom: 0;

@@ -1,10 +1,7 @@
 import Http from "../utils/http";
+import Base from "./base"
 
-class Service {
-  page = 1
-  count = 4
-  serviceList = []
-  hasMoreData = true
+class Service extends Base {
 
   /**
    * @param page 分页页码
@@ -14,7 +11,7 @@ class Service {
    */
   async getServiceList(category_id, type) {
     if (!this.hasMoreData) {
-      return this.serviceList
+      return this.list
     }
 
     const res = await Http.request({
@@ -27,18 +24,10 @@ class Service {
       }
     })
 
-    this.serviceList = [...this.serviceList, ...res.data]
+    this.list = [...this.list, ...res.data]
     this.hasMoreData = !(this.page === res.last_page)
     this.page++
-    return this.serviceList
-  }
-
-  reset() {
-    this.page = 1
-    this.count = 4
-    this.serviceList = []
-    this.hasMoreData = true
-    return this
+    return this.list
   }
 
   static getServiceDetail(id) {
