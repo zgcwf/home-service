@@ -1,3 +1,9 @@
+## WXSS
+
+1. 定义在 app.wxss 中的样式为全局样式，作用于每一个页面
+2. 在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器
+3. 在自定义组件内外，使用 class 指定的样式将不会相互影响
+
 ## WXS
 
 tips:当为了实现某个功能，会导致视图层与逻辑层频繁交互时，就需要考虑是否能使用 WXS 来代替这部分的实现,比如以下两种场景：
@@ -76,12 +82,12 @@ tips：自定义事件全部单词小写
   wx:for="{{carouselList}}"
   wx:key="id"
   bindtap="handleCarouselChange"
-  data-id="{{item.id}}"
+  data-zgc="{{item.id}}"
 ></swiper-item>
 
 //js：
 handleCarouselChange(e) {
-  const carouselId = e.currentTarget.dataset.id
+  const carouselId = e.currentTarget.dataset.zgc
   // 拿到模板传递的参数
   this.triggerEvent("onchange", carouselId)
 },
@@ -140,7 +146,7 @@ block wx:if，因为 wx:if 是一个控制属性，需要将它添加到一个�
 
 区别：
 
-1. 调用实例方法需要 new 实例化，调用静态方法可以直接调用
+1. 调用实例方法需要 new 实例化，调用静态方法可以用类名直接调用
 2. 在静态方法中是不能获取实例属性的状态（属性）的，但可以访问静态属性
 3. 调用静态方法本质上就是调用类方法
 4. 实例化调用，本质上是在调用对象的方法

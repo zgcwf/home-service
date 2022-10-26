@@ -27,7 +27,6 @@ class Http {
   }
 
   static showErrorMsg(errorCode, message) {
-    console.log(222);
     let title = errorMessage[errorCode] || message || '未知异常'
     title = this.formatMessage(title)
     wx.showToast({
@@ -44,13 +43,3 @@ class Http {
 }
 
 export default Http
-
-// wx.request({
-//   url: APIConfig.baseUrl + url,
-//   data,
-//   method,
-//   success: (res) => {
-//     console.log(res);
-//     this.showErrorMsg(res.data.error_code, res.data.message)
-//   }
-// })
